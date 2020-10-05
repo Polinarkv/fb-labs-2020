@@ -27,7 +27,7 @@ def monogram(ready_for_use_text, spaces=True):
     entropy_sym *= -1
     print(" Entropy: ")
     print(entropy_sym, log2(length))
-    redundancy = 1 - entropy_sym/log2(len(sym_probs))
+    redundancy = 1 - entropy_sym/log2(32)
     print(redundancy*100)
 
 
@@ -53,7 +53,7 @@ def bigram(ready_for_use_text):
     entropy_bigram *= -1
     print(" Entropy: ")
     print(entropy_bigram, log2(length))
-    redundancy = 1 - entropy_bigram/log2(len(bigram_probs)**2)
+    redundancy = 1 - entropy_bigram/log2(32**2)
     print(redundancy*100)
 
 def bigram_2(ready_for_use_text):
@@ -78,7 +78,7 @@ def bigram_2(ready_for_use_text):
     entropy_bigram2 *= -1
     print(" Entropy: ")
     print(entropy_bigram2, log2(length))
-    redundancy = 1 - entropy_bigram2/log2(len(bigram_2_probs)**2)
+    redundancy = 1 - entropy_bigram2/log2(32**2)
     print(redundancy*100)
 
 def clear_text(text):
@@ -113,4 +113,5 @@ print("\nBigrams without spaces: \n")
 bigram(text_copy)
 print("\nBigrams without spaces with step 2: \n")
 bigram_2(text_copy)
+
 
