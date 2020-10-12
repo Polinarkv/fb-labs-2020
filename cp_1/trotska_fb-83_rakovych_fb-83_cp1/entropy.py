@@ -69,7 +69,7 @@ def bigram_2(ready_for_use_text):
     print(len(bigram_2_freq))
     bigram_2_freq = {k: v for k, v in sorted(bigram_2_freq.items(), key=lambda item: item[1], reverse=True)}
     print(bigram_2_freq)
-    bigram_2_probs = {k: v /length for k, v in bigram_2_freq.items()}
+    bigram_2_probs = {k: v / (length//2) for k, v in bigram_2_freq.items()}
     print(bigram_2_probs)
 
     entropy_bigram2 = 0
